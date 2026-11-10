@@ -61,15 +61,16 @@ with tab_before:
     with col1:
         fig, ax = plt.subplots(figsize=(4, 4))
         draw_grid(before, path=old_route, ax=ax,
-                  title=f"Original: learned route {len(old_route)-1} steps")
+                  title=f"Original: BFS optimal route {len(old_route)-1} steps")
         st.pyplot(fig)
     with col2:
         fig, ax = plt.subplots(figsize=(4, 4))
         draw_grid(after, path=new_route, ax=ax,
                   title=f"Passage (3,7) sealed: new route {len(new_route)-1} steps")
         st.pyplot(fig)
-    st.write("The old route is ineffective after the change: its corridor "
-             "passage is a wall, so the agent must discover the left passage.")
+    st.write("The old route is blocked after the change: it goes through (3,7), "
+             "which is now a wall, so the agent must discover the left passage. "
+             "Step counts can match by symmetry — compare adaptation cost in Tab C, not steps.")
 
 with tab_reuse:
     st.header("C. Knowledge reuse comparison (Experiment B, 5 seeds)")

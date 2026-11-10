@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sample-efficient-gcrl-adaptation"
+version = "1.0.0"
+description = "Sample-Efficient Adaptation in Goal-Conditioned RL under Environment Changes (CASR)"
+readme = "README.md"
+authors = [
+  { name = "Vaibhav-CD", email = "vaibhavcdiitg@gmail.com" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+keywords = [
+  "reinforcement-learning",
+  "goal-conditioned-rl",
+  "knowledge-reuse",
+  "transfer-learning",
+  "casr",
+  "gridworld",
+  "adaptation"
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13"
+]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "matplotlib>=3.7",
+  "plotly>=5.15",
+  "streamlit>=1.28",
+  "pytest>=7.4"
+]
+
+[project.urls]
+Homepage = "https://github.com/Vaibhav-CD/sample-efficient-gcrl-adaptation"
+Repository = "https://github.com/Vaibhav-CD/sample-efficient-gcrl-adaptation.git"
+
+[project.scripts]
+casr-runner = "run:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["algorithms*", "environment*", "experiments*", "utils*", "visualization*", "tests*"]
